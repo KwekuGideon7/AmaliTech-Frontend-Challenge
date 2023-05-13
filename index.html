@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <title>AmaliTech Frontend Challenge</title>
+</head>
+<body class="theme-dark">
+    <header class="flex-row">
+        <h1>TODO</h1>
+        <div class="theme-block">
+            <input type="checkbox" name="theme" id="theme">
+            <label for="theme"></label>
+        </div>
+    </header>
+
+    <main>
+        <div class="add-new-item flex-row">
+            <span></span>
+            <input type="text" placeholder="Create a new todo..." name="addItem" id="addItem">
+        </div>
+        <section class="content">
+            <ul>
+                <li class="flex-row">
+                    <label class="list-item">
+                        <input type="checkbox" name="todoItem" checked>
+                        <span class="checkmark"></span>
+                        <span class="text">Text 1</span>
+                    </label>
+                    <span class="remove"></span>
+                </li>
+                <li class="flex-row">
+                    <label class="list-item">
+                        <input type="checkbox" name="todoItem">
+                        <span class="checkmark"></span>
+                        <span class="text">Text 2</span>
+                    </label>
+                    <span class="remove"></span>
+                </li>
+                <li class="flex-row">
+                    <label class="list-item">
+                        <input type="checkbox" name="todoItem">
+                        <span class="checkmark"></span>
+                        <span class="text">Text 2</span>
+                    </label>
+                    <span class="remove"></span>
+                </li>
+                <li class="flex-row">
+                    <label class="list-item">
+                        <input type="checkbox" name="todoItem">
+                        <span class="checkmark"></span>
+                        <span class="text">Text 2</span>
+                    </label>
+                    <span class="remove"></span>
+                </li>
+                <li class="flex-row">
+                    <label class="list-item">
+                        <input type="checkbox" name="todoItem">
+                        <span class="checkmark"></span>
+                        <span class="text">Text 3</span> 
+                    </label>
+                    <span class="remove"></span>
+                </li>
+            </ul>
+        </section>
+        <div class="bottom-items flex-row">
+            <div class="items-left"><span>2</span> items left</div>
+            <div class="filter flex-row">
+                <label>
+                    <input type="radio" name="filter" id="all" checked>
+                    <span>ALL</span>
+                </label>
+                <label>
+                    <input type="radio" name="filter" id="Active" checked>
+                    <span>Active</span>
+                </label>
+                <label>
+                    <input type="radio" name="filter" id="Completed" checked>
+                    <span>Completed</span>
+                </label>
+            </div>
+            <span class="clear">Clear Completed</span>
+        </div>
+    </main>
+    
+
+
+    <script src="index.js"></script>
+</body>
+</html>

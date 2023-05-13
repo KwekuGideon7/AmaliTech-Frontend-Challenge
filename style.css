@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+
+html, body {
+  height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+.flex-row{
+    display: flex;
+    flex-direction: row nowrap;
+    align-items: center;
+}
+/* .flex-row nt{
+    border-radius: 0;
+} */
+
+.theme-dark{
+    --bg-top-image: 0 0 url(./images/bg-desktop-dark.jpg) no-repeat;
+    --main-bg: hsl(235, 21%, 11%);
+    --todo-bg: hsl(235, 24%, 19%);
+    --todo-shadow: hsl(235, 21%, 11%);
+    --font-color: hsl(234, 39%, 85%);
+    --font-color-hover: #fff;
+}
+.theme-light{
+    --bg-top-image: 0 0 url(./images/bg-desktop-light.jpg) no-repeat;
+    --main-bg: hsl(0, 0%, 98%);
+    --todo-bg: hsl(0, 0%, 98%);
+    --todo-shadow: hsl(235, 19%, 35%);
+    --font-color: hsl(236, 9%, 61%);
+    --font-color-hover: hsl(235, 21%, 11%);
+}
+body{
+    font: 400 18px/1 'Josefin Sans', sans-serif;
+    background: var(--bg-top-image);
+    background-color: var(--main-bg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    color: var(--font-color);
+}
+header,main{
+    max-width: 545px;
+    margin: 0 auto;
+}
+header{
+    justify-content: space-between;
+    padding: 52px 0 1px; 
+}
+h1{
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 1rem;
+}
+.theme-block{
+    margin: -10px 0 0;
+}
+.theme-block #theme{
+    display: none;
+}
+.theme-block #theme + label::before{
+    content: '';
+    background: url(./images/icon-sun.svg) no-repeat center;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    margin: 0 10px 0 0;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.theme-block #theme:checked + label::before{
+    background: url(./images/icon-moon.svg) no-repeat center;
+}
+.add-new-item {
+    display: flex;
+    /* flex-direction: row nowrap; */
+    /* align-items: center; */
+    /* justify-content: space-between; */
+    /* padding: 20px 20px 20px 20px; */
+    background-color: var(--todo-bg);
+    box-shadow: 0 10px 10px -10px var(--todo-shadow);
+    border-radius: 5px;
+    margin: 0 0 24px;
+    padding: 0 26px;
+    height: 65px;
+    position: relative;
+}
+.add-new-item #addItem{
+    background: transparent;
+    color: var(--font-color);
+    border: 0;
+    outline: 0;
+    width: 100%;
+    height: 50px;
+    font: 400 18px/1 'Josefin Sans', sans-serif;
+    margin: 4px 0 0 47px;
+}
+.add-new-item span{
+    width: 25px;
+    height: 25px;
+    border: 1px solid var(--font-color);
+    border-radius: 50%;
+    position: absolute;
+    top: 21px;
+    left: 26px;
+    cursor: pointer;
+}
+.add-new-item span:hover{
+    background: url(./images/icon-check.svg) no-repeat center, linear-gradient(135deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));  
+}
+.content{
+    background-color: var(--todo-bg);
+    box-shadow: 0 42px 30px -9px var(--todo-shadow);
+    border-radius: 5px;
+    /* padding: 0 26px; */
+    /* margin: 0 0 24px; */
+}
+ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+ul li{
+    display: flex;
+    flex-direction: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 20px 20px 20px;
+    border-bottom: 1px solid hsl(236, 33%, 92%);
+    position: relative;
+}
+ul li input[type="checkbox"]{
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    width: 0;
+    height: 0;
+}
+ul li label{
+    position: relative;
+    cursor: pointer;
+    padding: 0 0 0 60px;
+    display: inline-block;
+    line-height: 1.2;
+    margin: 0;
+}
+.checkmark{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    border: 1px solid var(--font-color);
+    border-radius: 50%;
+}
+ul li.hidden{
+    display: none;
+}
+ul li input[type="checkbox"] ~ .checkmark{
+    border: 1px solid var(--font-color);
+    border-radius: 50%;
+}
+ul li input[type="checkbox"] ~ .checkmark:hover{
+    border: 0;
+    padding: 1px;
+    background: linear-gradient(135deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));  
+}
+ul li input[type="checkbox"] ~ .checkmark:hover::before{
+    content: '';
+    width: 23px;
+    height: 23px;
+    border-radius: 50%;
+    background: var(--todo-bg);
+    display: block;
+}
+ul li input[type="checkbox"]:checked ~ .checkmark{
+    background: center url(./images/icon-check.svg) no-repeat, linear-gradient(135deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+}
+ul li input[type="checkbox"]:checked ~ .text{
+    text-decoration: line-through;
+    color: hsl(233, 11%, 84%);
+}
+.remove{
+    background: url(./images/icon-cross.svg) no-repeat;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    display: none;
+}
+ul li:hover .remove{
+    display: block;
+}
+.items-left{
+    margin-right: 86px;
+}
+.bottom-items{
+    padding: 20px 20px 20px 20px;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+    align-items: baseline;
+    /* border-radius: 5px; */
+    background: var(--todo-bg);
+}
+.filter{
+    margin-right: 47px;
+}
+.filter input[type="radio"]{
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    width: 0;
+    height: 0;
+}
+.filter label{
+    cursor: pointer;
+    padding: 0 10px;
+    display: inline-block;
+    line-height: 1.2;
+    margin: 0;
+}
+.filter label:hover{
+    color: var(--font-color-hover);
+}
+.filter input[type="radio"]:checked ~ span{
+    color: hsl(221, 62%, 52%);
+}
+.clear{
+    color: var(--font-color);
+    cursor: pointer;
+}
+.clear:hover{
+    color: var(--font-color-hover);
+}
