@@ -98,4 +98,3 @@ function filterTodoItems(id) {
     }
 }
 
-// Thanks for watching till the end! You are a legend!
