@@ -246,3 +246,21 @@ ul li:hover .remove{
 .clear:hover{
     color: var(--font-color-hover);
 }
+
+.ftext h3{
+    position: absolute;
+    width: 179px;
+    height: 14px;
+    left: 625px;
+    top: 700px;
+    font-family: 'Josefin Sans';
+    font-style: normal;
+    font-weight: 100;
+    font-size: 14px;
+    line-height: 14px;
+    text-align: center;
+    letter-spacing: -0.194444px;
+    color: #9495A5;
+}
+
+
