@@ -313,6 +313,7 @@ ul li:hover .remove{
       background-size: 100% 200px;
     /* background-size: contain; */
     background-repeat: no-repeat;
+    /* background-color: rgba(227, 228, 241, 1); */
     }
     .top{
         margin: 0 24px;
@@ -334,18 +335,48 @@ ul li:hover .remove{
     } */
     .content{
         margin: 24px;
-        font-size: 0.6em;
+        font-size: 0.66em;
+        /* box-shadow: none; */
+        box-shadow: 0 10px 10px -10px var(--todo-shadow);
     }
-    .list-item{
-        padding-top: 7px;
+    li {
+        padding-left: -10px;
     }
+  
     .bottom-items{
       margin: 24px;
       height: 48px;
+      box-shadow: 0 10px 10px -10px var(--todo-shadow);
     }
-    .items-left{
-        display: flex;
-       float: left;
+    .filter{
+        /* text-align: center; */
+        padding-left:  45px; 
     }
+    .new1, .new2{
+        display: none;
+    }
+    .mobile{
+        outline: none;
+        border: none;
+    }
+    .ftext, h3{
+        margin-left: -530px;
+        margin-top: -10px;
 
+    }
+/* 
+    .mobile{
+
+    } */
+    /* .items-left, .clear {
+    display: list-item;
+    margin: 10px 0;
+    
+  }  */
+
+  }
+  @media screen and (min-width: 376px){
+    .mobile{
+        display: none;
+    }
   }
