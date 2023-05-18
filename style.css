@@ -1,6 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
 
+:root{
+    --bg-top-image: url(./images/bg-desktop-dark.jpg) no-repeat;
+    --bg-top-image-mobile: url(./images/bg-mobile-dark.jpg) no-repeat;
+    /* --bg-top-height-mobile: 270px; */
+}
+
+
 html, body {
+/* position: absolute; */
   height: 100vh;
   width: 100%;
   margin: 0;
@@ -264,3 +272,80 @@ ul li:hover .remove{
 }
 
 
+/* @media only screen and (min-width: 375px) {
+    *,*::before,*::after{
+        box-sizing: border-box;
+    }
+    .theme-dark{
+       
+        background-size: cover;
+        background-position: center;
+        width: 100vw;
+        height: 600px;
+        border: 2px solid tomato;
+
+    }
+    .dark-theme{
+        background: var(--bg-top-image);
+        width: 100vw;
+        background-size: cover;
+        background-position: contain;
+    }
+}
+@media only screen and (min-width: 770px){
+    .ftext{
+        position: absolute;
+        top: -20px;
+        left: -130px;
+    }
+}
+@media only screen and (min-width: 1440px){
+    .ftext{
+        position: absolute;
+        top: 5px;
+        left: 240px;
+    }
+} */
+
+@media screen and (max-width: 375px) {
+    body {
+      --bg-top-image: var(--bg-top-image-mobile);
+      background-size: 100% 200px;
+    /* background-size: contain; */
+    background-repeat: no-repeat;
+    }
+    .top{
+        margin: 0 24px;
+        padding-top: 25px;
+
+    }
+    h1{
+        font-size: 1.5rem;
+    }
+    .add-new-item{
+        margin: 10px 24px;
+        height: 48px;
+    }
+    .first{
+        margin-top: -9px;
+    }
+    /* input[type="text"]{
+        font-size: 10px;
+    } */
+    .content{
+        margin: 24px;
+        font-size: 0.6em;
+    }
+    .list-item{
+        padding-top: 7px;
+    }
+    .bottom-items{
+      margin: 24px;
+      height: 48px;
+    }
+    .items-left{
+        display: flex;
+       float: left;
+    }
+
+  }
