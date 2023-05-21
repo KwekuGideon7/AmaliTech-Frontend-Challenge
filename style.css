@@ -256,11 +256,7 @@ ul li:hover .remove{
 }
 
 .ftext h3{
-    position: absolute;
-    width: 179px;
-    height: 14px;
-    left: 625px;
-    top: 700px;
+    margin: 32px 0px;
     font-family: 'Josefin Sans';
     font-style: normal;
     font-weight: 100;
@@ -307,8 +303,8 @@ ul li:hover .remove{
     }
 } */
 
-@media screen and (max-width: 375px) {
-    body {
+@media screen and (max-width: 400px){
+    body{
       --bg-top-image: var(--bg-top-image-mobile);
       background-size: 100% 200px;
     /* background-size: contain; */
@@ -379,4 +375,5 @@ ul li:hover .remove{
     .mobile{
         display: none;
     }
+   
   }
