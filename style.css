@@ -18,6 +18,7 @@ html, body {
 
 *{
     box-sizing: border-box;
+ 
 }
 
 img{
@@ -39,16 +40,18 @@ img{
     --main-bg: hsl(235, 21%, 11%);
     --todo-bg: hsl(235, 24%, 19%);
     --todo-shadow: hsl(235, 21%, 11%);
-    --font-color: hsl(234, 39%, 85%);
+    --font-color: rgb(202, 205, 232);
     --font-color-hover: #fff;
+    --todo-border: rgb(57, 58, 75);
 }
 .theme-light{
     --bg-top-image: 0 0 url(./images/bg-desktop-light.jpg) no-repeat;
     --main-bg: hsl(0, 0%, 98%);
     --todo-bg: hsl(0, 0%, 98%);
-    --todo-shadow: hsl(235, 19%, 35%);
-    --font-color: hsl(236, 9%, 61%);
+    --todo-shadow: rgb(72, 75, 106);
+    --font-color: #9394a5;
     --font-color-hover: hsl(235, 21%, 11%);
+    --todo-border: rgb(227, 228, 241);
 }
 body{
     font: 400 18px/1 'Josefin Sans', sans-serif;
@@ -130,8 +133,10 @@ h1{
 }
 .content{
     background-color: var(--todo-bg);
-    box-shadow: 0 42px 30px -9px var(--todo-shadow);
-    border-radius: 5px;
+    /* box-shadow: 0 42px 30px -9px var(--todo-shadow); */
+    box-shadow: 0 5px 25px 0.09px rgb(72, 75, 106, 0.15);
+
+    border-radius: 5px 5px 0px 0px;
     /* padding: 0 26px; */
     /* margin: 0 0 24px; */
 }
@@ -146,7 +151,7 @@ ul li{
     align-items: center;
     justify-content: space-between;
     padding: 20px 20px 20px 20px;
-    border-bottom: 1px solid hsl(236, 33%, 92%);
+    border-bottom: 1px solid var(--todo-border);
     position: relative;
 }
 ul li input[type="checkbox"]{
@@ -159,15 +164,19 @@ ul li input[type="checkbox"]{
 ul li label{
     position: relative;
     cursor: pointer;
-    padding: 0 0 0 60px;
     display: inline-block;
-    line-height: 1.2;
-    margin: 0;
+    line-height: 1.5;
+    padding-left: 40px;
+    margin: 0; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
 .checkmark{
     position: absolute;
     top: 0;
-    left: 0;
+    left: 0; 
     height: 25px;
     width: 25px;
     border: 1px solid var(--font-color);
@@ -179,6 +188,7 @@ ul li.hidden{
 ul li input[type="checkbox"] ~ .checkmark{
     border: 1px solid var(--font-color);
     border-radius: 50%;
+    
 }
 ul li input[type="checkbox"] ~ .checkmark:hover{
     border: 0;
@@ -213,9 +223,7 @@ ul li input[type="checkbox"]:checked ~ .text{
 ul li:hover .remove{
     display: block;
 }
-.items-left{
-    margin-right: 86px;
-}
+
 .bottom-items{
     padding: 20px 20px 20px 20px;
     font-size: 0.8rem;
@@ -223,10 +231,14 @@ ul li:hover .remove{
     align-items: baseline;
     /* border-radius: 5px; */
     background: var(--todo-bg);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 35px 20px -9px rgb(72, 75, 106, 0.10);
+
+
 }
-.filter{
-    margin-right: 47px;
-}
+
 .filter input[type="radio"]{
     position: absolute;
     opacity: 0;
@@ -303,7 +315,7 @@ ul li:hover .remove{
     }
 } */
 
-@media screen and (max-width: 400px){
+@media screen and (max-width: 375px){
     body{
       --bg-top-image: var(--bg-top-image-mobile);
       background-size: 100% 200px;
@@ -333,21 +345,30 @@ ul li:hover .remove{
         margin: 24px;
         font-size: 0.66em;
         /* box-shadow: none; */
-        box-shadow: 0 10px 10px -10px var(--todo-shadow);
+      
     }
-    li {
-        padding-left: -10px;
+    .mobile li{
+        margin: 0px 24px;
+        padding: 0px 24px;
+        height: 48px;
+        border-radius: 5px;
+        box-shadow: 0 5px 0.5px 0px var(--todo-shadow);
     }
-  
+    /* input#add-item{
+        
+    } */
+   
     .bottom-items{
       margin: 24px;
       height: 48px;
-      box-shadow: 0 10px 10px -10px var(--todo-shadow);
+      border-radius: 0px 0px 5px 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 15px 20px -9px rgb(72, 75, 106, 0.20);
+      
     }
-    .filter{
-        /* text-align: center; */
-        padding-left:  45px; 
-    }
+  
     .new1, .new2{
         display: none;
     }
@@ -355,22 +376,30 @@ ul li:hover .remove{
         outline: none;
         border: none;
     }
-    .ftext, h3{
-        margin-left: -530px;
-        margin-top: -10px;
-
+    span.checkmark{
+        width: 20px;
+        height: 20px;
     }
-/* 
-    .mobile{
+    span.first{
+        height: 20px;
+        width: 20px;
+    }
+    span.text{
+        line-height: 20px;
+    }
+    ul li label{
+        position: relative;
+        cursor: pointer;
+        display: inline-block;
+        line-height: 2.5;
+        padding-left: 40px;
+        margin: 0; 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
-    } */
-    /* .items-left, .clear {
-    display: list-item;
-    margin: 10px 0;
-    
-  }  */
-
-  }
+}
   @media screen and (min-width: 376px){
     .mobile{
         display: none;

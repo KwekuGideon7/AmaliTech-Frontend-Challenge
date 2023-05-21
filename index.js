@@ -2,8 +2,11 @@ const theme = document.getElementById('theme');
 const newItemInput = document.getElementById('addItem');
 const todoList = document.querySelector('.content ul');
 const itemsLeft = document.querySelector('.items-left span');
+const itemsLeft2 = document.querySelector('.items-left2 span');
+
 
 itemsLeft.innerText = document.querySelectorAll('.list-item input[type="checkbox"]').length;
+itemsLeft2.innerText = document.querySelectorAll('.list-item input[type="checkbox"]').length;
 
 theme.addEventListener('click', () => {
     document.querySelector('body').classList = [theme.checked ? 'theme-light' : 'theme-dark'];
@@ -45,6 +48,7 @@ function createNewTodoItem(text) {
 
 function updateItemsCount(number) {
     itemsLeft.innerText = +itemsLeft.innerText + number;
+    itemsLeft2.innerText = +itemsLeft2.innerText + number;
 }
 
 // remove todo item
@@ -67,6 +71,12 @@ document.querySelector('.clear').addEventListener('click', () => {
         removeTodoItem(item.closest('li'));
     });
 });
+document.querySelector('.clear2').addEventListener('click', () => {
+    document.querySelectorAll('.list-item input[type="checkbox"]:checked').forEach(item => {
+        removeTodoItem(item.closest('li'));
+    });
+});
+
 
 
 // filter todo list items
