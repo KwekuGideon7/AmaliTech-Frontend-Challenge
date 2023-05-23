@@ -1,6 +1,7 @@
 const theme = document.getElementById('theme');
 const newItemInput = document.getElementById('addItem');
 const todoList = document.querySelector('.content ul');
+const todo_wrapper = document.querySelector('.new_content');
 const itemsLeft = document.querySelector('.items-left span');
 const itemsLeft2 = document.querySelector('.items-left2 span');
 
@@ -108,4 +109,6 @@ function filterTodoItems(id) {
     }
 }
 
-
+new Sortable(todo_wrapper,{
+    animation: 300
+});

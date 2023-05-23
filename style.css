@@ -351,11 +351,13 @@ ul li:hover .remove{
     font-size: 0.66em;
     padding-left: -20px;
   }
+ 
   input[type="text"]{
     padding-bottom: 7px;
+ 
+    
 
   }
-  
  
     span.text{
         line-height: 20px;
