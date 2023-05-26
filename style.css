@@ -342,6 +342,8 @@ ul li:hover .remove{
         outline: none;
         border: none;
     }
+   
+
 
     .add-new-item{
         display: flex;
@@ -360,7 +362,8 @@ ul li:hover .remove{
   }
  
     span.text{
-        line-height: 20px;
+        line-height: 28px;
+        
     } 
     span.first{
         height: 20px;
@@ -370,22 +373,30 @@ ul li:hover .remove{
         width: 23px;
         height: 23px;
     }
+    .add-new-item{
+        padding: 0px 12px;
+    }
     .add-new-item span{
         height: 23px;
         width: 23px;
     }
+    /* #list li.mobile{
+        order: 9999;
+    } */
    
     ul li label{
         position: relative;
         cursor: pointer;
-        display: inline-block;
+        /* display: inline-block; */
         line-height: 2.5;
-        padding-left: 40px;
+        padding-left: 35px;
         margin: 0; 
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
     }
+  
+
 
 }
   @media screen and (min-width: 376px){
