@@ -109,14 +109,6 @@ function filterTodoItems(id) {
     }
 }
 
-// window.addEventListener('DOMContentLoaded', () => {
-//     const list = document.getElementById('list');
-//     const mobileItem = document.querySelector('#list .mobile');
-  
-//     list.appendChild(mobileItem);
-//   });
-  
-
 
 new Sortable(todo_wrapper,{
     animation: 300
