@@ -110,6 +110,9 @@ function filterTodoItems(id) {
 }
 
 
+
+// drag and drop    
 new Sortable(todo_wrapper,{
     animation: 300
 });
+
