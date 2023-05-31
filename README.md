@@ -34,7 +34,7 @@ The project objective was to get the TODO App looking as close as the design as 
 
 ## Links
 
-- Solution URL: [(https://github.com/KwekuGideon7/AmaliTech-Frontend-Challenge)](https://github.com/KwekuGideon7/AmaliTech-Frontend-Challenge)
+- Solution URL: [(https://github.com/KwekuGideon7/AmaliTech-Frontend-Challenge)](https://github.com/KwekuGideon7/AmaliTech-Frontend-Challenge/)
 - Live Site URL: [https://kwekugideon7.github.io/AmaliTech-Frontend-Challenge/](https://kwekugideon7.github.io/AmaliTech-Frontend-Challenge/)
 
 
