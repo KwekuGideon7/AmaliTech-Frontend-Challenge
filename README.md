@@ -28,7 +28,7 @@ Assets including Figma design files, JPEG design files for both mobile & desktop
 The project objective was to get the TODO App looking as close as the design as possible.
 
 ## Screenshot
-![Mobile-lightMode-Screen](https://www.awesomescreenshot.com/image/40344755?key=64a2aef9361158953dc9dac340c7ad1e)
+![DarkMode Desktop Screen](./screenshots/DarkMode-DesktopScreen)
 
 ## Customer requirements
 
