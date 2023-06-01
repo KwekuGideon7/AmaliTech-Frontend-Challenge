@@ -91,8 +91,8 @@ I would love to develop the project with react in the near future.
 
 I found the following websites very helpful:
 
-- [(MDN WEB DOCS)](https://developer.mozilla.org/en-US/)
-- [(W3SCHOOLS)](https://www.w3schools.com/)
+- [MDN WEB DOCS](https://developer.mozilla.org/en-US/)
+- [W3SCHOOLS](https://www.w3schools.com/)
 
 
 
