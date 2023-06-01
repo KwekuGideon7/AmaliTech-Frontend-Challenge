@@ -1,6 +1,7 @@
 # AmaliTech-Frontend-Challenge
 Frontend assessment for AmaliTech
-![Design preview for the Todo app coding challenge](./design/desktop-preview.jpg)
+
+![Design preview for the Todo app coding challenge](https://res.cloudinary.com/dz209s6jk/image/upload/f_auto,q_auto,w_700/Challenges/llcq9eiv3ney5tkxgdtu.jpg)
 
 ## Welcome! 👋
 
