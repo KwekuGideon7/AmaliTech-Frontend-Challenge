@@ -20,12 +20,14 @@ document.querySelector('.add-new-item span').addEventListener('click', () => {
     }
 });
 
+
 newItemInput.addEventListener('keypress', (e) => {
-    if (e.charCode === 13 && newItemInput.value.length > 0) {
-        createNewTodoItem(newItemInput.value);
-        newItemInput.value = '';
+    if (e.key === "Enter" && newItemInput.value.length > 0) {
+      createNewTodoItem(newItemInput.value);
+      newItemInput.value = '';
     }
-});
+  });
+  
 
 function createNewTodoItem(text) {
     const elem = document.createElement('li');
