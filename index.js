@@ -37,7 +37,8 @@ document.querySelectorAll('.list-item input[type="checkbox"]').forEach(todo => {
     todo.addEventListener('click', (e) => {
         if(!e.target.checked){
             updateItemsCount(1);
-        }else{
+        }
+        else if(e.target.checked){
             updateItemsCount(-1);
         }
     });
@@ -72,8 +73,14 @@ function updateItemsCount(number) {
 // remove todo item
 
 function removeTodoItem(elem) {
+    console.log(elem);
     elem.remove();
-    updateItemsCount(-1);
+    if (!elem.querySelector('input').checked) {
+        updateItemsCount(-1);
+    }
+    else{
+        return;
+    }
 }
 
 todoList.addEventListener('click',(event) => {
@@ -89,6 +96,7 @@ document.querySelector('.clear').addEventListener('click', () => {
         removeTodoItem(item.closest('li'));
     });
 });
+
 document.querySelector('.clear2').addEventListener('click', () => {
     document.querySelectorAll('.list-item input[type="checkbox"]:checked').forEach(item => {
         removeTodoItem(item.closest('li'));
