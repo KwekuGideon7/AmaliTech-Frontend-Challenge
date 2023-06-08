@@ -226,6 +226,7 @@ ul li input[type="checkbox"]:checked~.text {
     color: hsl(233, 11%, 84%);
 }
 
+
 .remove {
     background: url(./images/icon-cross.svg) no-repeat;
     width: 18px;

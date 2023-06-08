@@ -6,13 +6,14 @@ const itemsLeft = document.querySelector('.items-left span');
 const itemsLeft2 = document.querySelector('.items-left2 span');
 
 
-itemsLeft.innerText = document.querySelectorAll('.list-item input[type="checkbox"]').length;
-itemsLeft2.innerText = document.querySelectorAll('.list-item input[type="checkbox"]').length;
+itemsLeft.innerText = document.querySelectorAll('.list-item input[type="checkbox"]:not(:checked)').length;
+itemsLeft2.innerText = document.querySelectorAll('.list-item input[type="checkbox"]:not(:checked)').length;
 
 theme.addEventListener('click', () => {
     document.querySelector('body').classList = [theme.checked ? 'theme-light' : 'theme-dark'];
 });
 
+//trigger input
 document.querySelector('.add-new-item span').addEventListener('click', () => {
     if (newItemInput.value.length > 0) {
         createNewTodoItem(newItemInput.value);
@@ -20,6 +21,9 @@ document.querySelector('.add-new-item span').addEventListener('click', () => {
     }
 });
 
+// document.querySelectorAll('list-item').addEventListener('click', (event) => {
+//     console.log('hello', event);
+// });
 
 newItemInput.addEventListener('keypress', (e) => {
     if (e.key === "Enter" && newItemInput.value.length > 0) {
@@ -28,7 +32,7 @@ newItemInput.addEventListener('keypress', (e) => {
     }
   });
   
-
+//create new todo item
 function createNewTodoItem(text) {
     const elem = document.createElement('li');
     elem.classList.add('flex-row');
@@ -89,27 +93,32 @@ document.querySelectorAll('.filter input').forEach(radio => {
     });
 });
 
-function filterTodoItems(id) {
-    const allItems = todoList.querySelectorAll('li');
 
+const filterTodoItems = (id) => {
+    const allItems = todoList.querySelectorAll('li');
+  
     switch(id) {
-        case 'all':
-            allItems.forEach(item => {
-                item.classList.remove('hidden');
-            })
+      case 'all':
+        allItems.forEach(item => item.classList.remove('hidden'));
+        break;
+
+        case 'Active':
+          allItems.forEach(item => item.querySelector('input').checked ? item.classList.add('hidden') : item.classList.remove('hidden'));
+          break;
+        
+        case 'Completed':
+            allItems.forEach(item => item.querySelector('input').checked ? item.classList.remove('hidden') : item.classList.add('hidden'));
+            // updateItemsCount(-1);
             break;
-        case 'active':
-            allItems.forEach(item => {
-                item.querySelector('input').checked ? item.classList.add('hidden') : item.classList.remove('hidden');;
-            })
-            break;
-        default: 
-            allItems.forEach(item => {
-                !item.querySelector('input').checked ? item.classList.add('hidden') : item.classList.remove('hidden');;
-            })
-            break;
+            
+
+        default:
+        break;
+
+
     }
-}
+  };
+  
 
 
 
