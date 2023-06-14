@@ -316,9 +316,29 @@ a {
     color: rgb(138 180 248);
 }
 
+.clear2:hover{
+    color: var(--font-color-hover);
+    cursor: pointer;
+    /* margin-left: 10px; */
+}
 
+section.content{
+    border-radius: 5px 5px 0px 0px;
+}
 
-@media screen and (max-width: 375px) {
+div.bottom-items{
+    border-radius: 0px 0px 5px 5px;
+}
+section{
+    max-height: 410px;
+    overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+    display: none;
+  }
+
+@media screen and (max-width: 480px) {
     body {
         --bg-top-image: var(--bg-top-image-mobile);
         background-size: 100% 200px;
@@ -334,7 +354,7 @@ a {
     h1 {
         font-size: 1.5rem;
     }
-
+    
     .add-new-item {
         margin: 10px 24px;
         height: 48px;
@@ -432,13 +452,51 @@ a {
         margin: 0px 50px;
     }
 
+    section.content{
+        border-radius: 5px;
+    }
+    
+    div.bottom-items{
+        border-radius: 5px;
+    }
+
 
 
 }
 
-@media screen and (min-width: 376px) {
+@media screen and (min-width: 481px) {
     .mobile {
         display: none;
     }
 
+}
+
+@media screen  and (max-width: 768px){
+    body{
+        background-size: 100% 230px;
+        width: 100%;
+    }
+    /* header.flex-row{
+        background-color: red;
+        text-align: center;
+    } */
+/* 
+    .flex-row{
+        margin: 20px;
+    } */
+    .attribution{
+        font-size: 0.86rem;
+        margin: 50px;
+}
+.bottom-items{
+font-size: 0.76rem;
+}
+/* section{
+    background-color: red;
+    width: 93%;
+    margin:  20px;
+} */
+/* section{
+    margin: 20px;
+} */
 }
