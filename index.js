@@ -161,11 +161,12 @@ eventListener(query_selector(".clear"),"click", () => {
     updateLocalStorage();
 })
 
-// eventListener(query_selector(".clear2"),"click", () => {
-//     query_all("list-item input[type='checkbox']:checked").forEach(item => {
-//         removeTodoItem(item.closest('li'));
-//     });
-// })
+eventListener(query_selector(".clear2"),"click", () => {
+    query_all("list-item input[type='checkbox']:checked").forEach(item => {
+        removeTodoItem(item.closest('li'));
+    });
+    updateLocalStorage();
+})
 
 // filter todo list items
 document.querySelectorAll('.filter input').forEach(radio => {
