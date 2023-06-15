@@ -163,7 +163,6 @@ function get_element_id(...data) {
     query_all("list-item input[type='checkbox']:checked").forEach((item) => {
       removeTodoItem(item.closest("li"));
     });
-    updateItemsCount();
     updateLocalStorage();
   });
   
@@ -171,7 +170,6 @@ function get_element_id(...data) {
     query_all("list-item input[type='checkbox']:checked").forEach((item) => {
       removeTodoItem(item.closest("li"));
     });
-    updateItemsCount();
     updateLocalStorage();
   });
   
