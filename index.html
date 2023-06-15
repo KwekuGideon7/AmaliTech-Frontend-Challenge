@@ -1,115 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
     <title>AmaliTech Frontend Challenge</title>
-</head>
-<body class="theme-dark">
+  </head>
+  <body class="theme-dark">
     <header class="flex-row dark-theme top">
-        <h1>TODO</h1>
-        <div class="theme-block">
-            <input type="checkbox" name="theme" id="theme">
-            <label for="theme"></label>
-        </div>
+      <h1>TODO</h1>
+      <div class="theme-block">
+        <input type="checkbox" name="theme" id="theme" />
+        <label for="theme"></label>
+      </div>
     </header>
 
     <main>
-        <div class="add-new-item flex-row">
-            <span class="first"></span>
-            <input type="text" placeholder="Create a new todo..." name="addItem" id="addItem">
+      <div class="add-new-item flex-row">
+        <span class="first"></span>
+        <input
+          type="text"
+          placeholder="Create a new todo..."
+          name="addItem"
+          id="addItem"
+        />
+      </div>
+      <section class="content">
+        <ul class="new_content" id="list"></ul>
+      </section>
+      <div class="mobile">
+        <div class="items-left"><span>0</span> items left</div>
+        <span class="clear">Clear Completed</span>
+      </div>
+      <div class="bottom-items flex-row" todo_wrapper>
+        <div class="items-left2 new1"><span>0</span> items left</div>
+        <div class="filter flex-row">
+          <label>
+            <input type="radio" name="filter" id="all" checked />
+            <span>ALL</span>
+          </label>
+          <label>
+            <input type="radio" name="filter" id="Active" />
+            <span>Active</span>
+          </label>
+          <label>
+            <input type="radio" name="filter" id="Completed" />
+            <span>Completed</span>
+          </label>
         </div>
-        <section class="content">
-            <ul class="new_content" id="list">
-                <!-- <li class="flex-row">
-                    <label class="list-item">
-                        <input type="checkbox" name="todoItem" checked>
-                        <span class="checkmark"></span>
-                        <span class="text">Complete online JavaScript course</span>
-                    </label>
-                    <span class="remove"></span>
-                </li>
-                <li class="flex-row">
-                    <label class="list-item">
-                        <input type="checkbox" name="todoItem">
-                        <span class="checkmark"></span>
-                        <span class="text">Jog around the park 3x</span>
-                    </label>
-                    <span class="remove"></span>
-                </li>
-                <li class="flex-row">
-                    <label class="list-item">
-                        <input type="checkbox" name="todoItem">
-                        <span class="checkmark"></span>
-                        <span class="text">10 minutes meditation</span>
-                    </label>
-                    <span class="remove"></span>
-                </li>
-                <li class="flex-row">
-                    <label class="list-item">
-                        <input type="checkbox" name="todoItem">
-                        <span class="checkmark"></span>
-                        <span class="text">Read for 1 hour</span>
-                    </label>
-                    <span class="remove"></span>
-                </li>
-                <li class="flex-row">
-                    <label class="list-item">
-                        <input type="checkbox" name="todoItem">
-                        <span class="checkmark"></span>
-                        <span class="text">Pick up groceries</span> 
-                    </label>
-                    <span class="remove"></span>
-                </li>
-                <li class="flex-row">
-                    <label class="list-item">
-                        <input type="checkbox" name="todoItem">
-                        <span class="checkmark"></span>
-                        <span class="text">Complete Todo App on Frontend Mentor</span> 
-                    </label>
-                    <span class="remove"></span>
-                </li> -->
-            </ul>
-            <div class="mobile">
-                <div class="items-left"><span>2</span> items left</div>
-                <span class="clear">Clear Completed</span>
-            </div>
-        </section>
-        <div class="bottom-items flex-row" todo_wrapper>
-            <div class="items-left2 new1"><span>2</span> items left</div>
-            <div class="filter flex-row">
-                <label>
-                    <input type="radio" name="filter" id="all" checked>
-                    <span>ALL</span>
-                </label>
-                <label>
-                    <input type="radio" name="filter" id="Active" >
-                    <span>Active</span>
-                </label>
-                <label>
-                    <input type="radio" name="filter" id="Completed">
-                    <span>Completed</span>
-                </label>
-            </div>
-            <span class="clear2 new2">Clear Completed</span>
-        </div>
-        <div class="ftext">
-            <h3>Drag and drop to reorder list</h3>
-        </div>
-        
-          
+        <span class="clear2 new2">Clear Completed</span>
+      </div>
+      <div class="ftext">
+        <h3>Drag and drop to reorder list</h3>
+      </div>
     </main>
     <div class="attribution">
-        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-        Coded by <a href="https://www.linkedin.com/in/kweku-gideon-5b34441a4/" target="_blank">Gideon Nyedua Aboah</a>.
-      </div>
-    
-    
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by
+      <a
+        href="https://www.linkedin.com/in/kweku-gideon-5b34441a4/"
+        target="_blank"
+        >Gideon Nyedua Aboah</a
+      >.
+    </div>
 
     <script src="./Sortable.js"></script>
     <script src="index.js"></script>
-</body>
+  </body>
 </html>
