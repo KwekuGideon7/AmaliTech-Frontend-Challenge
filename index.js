@@ -36,9 +36,6 @@ eventListener(theme,"click",() => {
     const newTheme = theme.checked ? "theme-light" : "theme-dark";
     body.classList = [newTheme];
     localStorage.setItem("theme", newTheme);
-    // query_selector("body").classList = [ 
-    //     theme.checked ? "theme-light" : "theme-dark"
-    // ]
 });
 
 function getThemeFromLocalStorage() {
@@ -56,8 +53,8 @@ function getLocalStorage() {
     let localItems = JSON.parse(localStorage.getItem("localItem"));
     if (localItems !== null && typeof localItems === "string") {
       todoList.innerHTML = localItems;
-    //   console.log('localIt')
     }
+    
   }
 
 // Save todos to local storage
@@ -97,30 +94,39 @@ function createNewTodoItem(text) {
     ` ;
 
   
+    // elem.querySelector('input[type="checkbox"]').addEventListener('click', (e) => {
+    //     if(!e.target.checked){
+    //         updateItemsCount(1);
+    //     }
+    //     else if(e.target.checked){
+    //         updateItemsCount(-1);
+    //     }
+    // });
+
+    // elem.querySelector('input[type="checkbox"]').addEventListener('keypress', (e) => {
+    //     if(!e.target.checked){
+    //         updateItemsCount(1);
+    //     }
+    //     else if(e.target.checked){
+    //         updateItemsCount(-1);
+    //     }
+    // });
+
+//new
     elem.querySelector('input[type="checkbox"]').addEventListener('click', (e) => {
-        if(!e.target.checked){
-            updateItemsCount(1);
+        if (!e.target.checked) {
+          updateItemsCount(1);
+        } else if (e.target.checked) {
+          updateItemsCount(-1, true); // Invoke with completed = true
         }
-        else if(e.target.checked){
-            updateItemsCount(-1);
-        }
-    });
-
-    elem.querySelector('input[type="checkbox"]').addEventListener('keypress', (e) => {
-        if(!e.target.checked){
-            updateItemsCount(1);
-        }
-        else if(e.target.checked){
-            updateItemsCount(-1);
-        }
-    });
-
+      });
+      
 
 
 
     todoList.append(elem);
     newItemInput.value = "";
-    updateItemsCount(1);
+    updateItemsCount();
     updateLocalStorage();
     // console.log('TEST1'+'Update local storage data'+localStorage.getItem('localItem'));
 }
@@ -131,14 +137,31 @@ function createNewTodoItem(text) {
 //     itemsLeft2.innerText = num > 0 ? count + num : count - num;
 //     console.log('updateItemsCount invoked')
 // }
-function updateItemsCount() {
-    const count = todoList.querySelectorAll('li').length;
-    itemsLeft2.innerText = count;
+// function updateItemsCount() {
+//     let count = todoList.querySelectorAll('li').length;
+//     itemsLeft2.innerText = count;
+//     localStorage.setItem("itemsCount", itemsLeft2.innerText);
 
-    localStorage.setItem("itemsCount", count);
-  }
+//   }
   
 updateItemsCount();
+
+// function 
+function updateItemsCount(num = 0, completed = false) {
+    let count = todo_wrapper.getElementsByTagName("li").length;
+    let currentCount = parseInt(itemsLeft2.innerText);
+
+    if (count === 0){
+        itemsLeft2.innerText = 0;
+    }else if (completed) {
+      itemsLeft2.innerText = currentCount - 1;
+    } else {
+      itemsLeft2.innerText = num > 0 ? count + num : count - num;
+    }
+  
+    localStorage.setItem("itemsCount", itemsLeft2.innerText); // Save updated count to local storage
+  }
+  
 
 // remove todo item
 function removeTodoItem(elem) {
@@ -158,6 +181,7 @@ eventListener(query_selector(".clear"),"click", () => {
     query_all("list-item input[type='checkbox']:checked").forEach(item => {
         removeTodoItem(item.closest('li'));
     });
+    updateItemsCount();
     updateLocalStorage();
 })
 
@@ -165,6 +189,7 @@ eventListener(query_selector(".clear2"),"click", () => {
     query_all("list-item input[type='checkbox']:checked").forEach(item => {
         removeTodoItem(item.closest('li'));
     });
+    updateItemsCount();
     updateLocalStorage();
 })
 
